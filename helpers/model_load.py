@@ -82,7 +82,7 @@ def load_model(root, load_on_run_all=True, check_sha256=True, map_location="cuda
     except:
         ipy = 'could not get_ipython'
 
-    if 'google.colab' in str(ipy):
+    if 'google.colab' not in str(ipy):
         path_extend = "deforum-stable-diffusion"
     else:
         path_extend = ""

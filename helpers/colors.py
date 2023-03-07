@@ -12,5 +12,5 @@ def maintain_colors(prev_img, color_match_sample, mode):
     else: # Match Frame 0 LAB
         prev_img_lab = cv2.cvtColor(prev_img, cv2.COLOR_RGB2LAB)
         color_match_lab = cv2.cvtColor(color_match_sample, cv2.COLOR_RGB2LAB)
-        matched_lab = match_histograms(prev_img_lab, color_match_lab, multichannel=True)
+        matched_lab = match_histograms(prev_img_lab, color_match_lab, channel_axis=True)
         return cv2.cvtColor(matched_lab, cv2.COLOR_LAB2RGB)
